@@ -169,7 +169,7 @@ class ApiGw_Stack(Stack):
                                             'EMBED_MODEL_ID': embed_model_id,
                                             'INDEX_DYNAMO_TABLE_NAME': env_params['index_dynamo_table_name']
                               },
-                              memory_size=2048,
+                              memory_size=512,
                               layers= [addtional_libs_layer, langchainpy_layer, pdfpy_layer])
         
         lambda_function = bedrock_indexing_lambda_function
@@ -191,7 +191,7 @@ class ApiGw_Stack(Stack):
                                             'IS_BEDROCK_KB': 'no',
                                             'CONVERSATIONS_DYNAMO_TABLE_NAME': env_params['conversations_dynamo_table_name']
                               },
-                              memory_size=2048,
+                              memory_size=512,
                               layers= [addtional_libs_layer, agentic_libs_layer_name, langchainpy_layer, pdfpy_layer]
                             )
         
